@@ -2,10 +2,11 @@
 
 let newsAccordion = document.getElementById('accordionExample');
 
-
+let source = 'bbc-news';
+let apiKey = '8850c967f70e49fe9885d3045e8dc5aa'
 
 const xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://newsapi.org/v2/top-headlines?country=in&apiKey=8850c967f70e49fe9885d3045e8dc5aa', true);
+xhr.open('GET', 'https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}', true);
 
 xhr.onload = function() {
   if (this.status === 200) {
